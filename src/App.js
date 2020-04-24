@@ -1,11 +1,20 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
 
-export default Home = () => {
+const Home = () => {
   return (
     <View style={styles.container}>
       <Text>Home Screen v5</Text>
     </View>
+  )
+}
+
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Home />
+    </NavigationContainer>
   )
 }
 
@@ -16,3 +25,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 })
+
+export default App
