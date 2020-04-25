@@ -5,7 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { AuthenticationContext } from "./context"
-import Home from './Home'
+import Home, { Blog } from './Home'
 import Settings from './Settings'
 import SignIn from './SignIn'
 import { Tab1, Tab2 } from './Tabs'
@@ -13,6 +13,7 @@ import { Tab1, Tab2 } from './Tabs'
 const AppStack = createStackNavigator()
 const Drawer = createDrawerNavigator()
 const Tabs = createBottomTabNavigator()
+const HomeStack = createStackNavigator()
 
 const TabsNav = () => (
   <Tabs.Navigator>
@@ -21,9 +22,16 @@ const TabsNav = () => (
   </Tabs.Navigator>
 )
 
+const HomeNav = () => (
+  <HomeStack.Navigator>
+    <HomeStack.Screen name="Home" component={Home} />
+    <HomeStack.Screen name="Blog" component={Blog} />
+  </HomeStack.Navigator>
+)
+
 const DrawerNav = () => (
   <Drawer.Navigator initialRouteName="Profile">
-    <Drawer.Screen name="Home" component={Home} />
+    <Drawer.Screen name="Home" component={HomeNav} />
     <Drawer.Screen name="Settings" component={Settings} />
     <Drawer.Screen name="TabsNav" component={TabsNav} />
   </Drawer.Navigator>
