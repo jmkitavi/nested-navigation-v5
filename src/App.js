@@ -1,29 +1,21 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
-const Home = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Home Screen v5</Text>
-    </View>
-  )
-}
+import Home from './Home'
+import Settings from './Settings'
+
+const AppStack = createStackNavigator()
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Home />
+      <AppStack.Navigator>
+        <AppStack.Screen name="Home" component={Home} />
+        <AppStack.Screen name="Settings" component={Settings} />
+      </AppStack.Navigator>
     </NavigationContainer>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
 
 export default App
