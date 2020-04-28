@@ -3,16 +3,16 @@ import { StyleSheet, View, Text } from 'react-native'
 
 export const Tab1 = () => {
   return (
-    <View style={styles.container}>
-      <Text>Tab1 Screen</Text>
+    <View style={[styles.container, { backgroundColor: '#764ABC'}]}>
+      <Text>Tab 1 Screen</Text>
     </View>
   )
 }
 
 export const Tab2 = () => {
   return (
-    <View style={styles.container}>
-      <Text>Tab2 Screen</Text>
+    <View style={[styles.container, { backgroundColor: 'purple' }]}>
+      <Text>Tab 2 Screen</Text>
     </View>
   )
 }
